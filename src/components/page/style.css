@@ -1,0 +1,8 @@
+.ui.menu {
+  width: auto !important;
+  background: transparent !important;
+  display: block !important;
+  -webkit-box-shadow: 0 0px 0px 0 rgba(255,255,255,0) !important;
+  box-shadow: 0 0px 0px 0 rgba(255,255,255,0) !important;
+  border: none !important;
+}

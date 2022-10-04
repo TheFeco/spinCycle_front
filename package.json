@@ -1,0 +1,40 @@
+{
+  "name": "boilerplate",
+  "version": "0.1.0",
+  "author": "Luis Benitez",
+  "private": true,
+  "dependencies": {
+    "apollo-boost": "^0.1.12",
+    "apollo-cache-inmemory": "^1.2.7",
+    "apollo-link-ws": "^1.0.8",
+    "axios": "^0.18.0",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.2",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
+    "react": "^16.2.0",
+    "react-anchor-link-smooth-scroll": "^1.0.11",
+    "react-apollo": "^2.1.9",
+    "react-dom": "^16.2.0",
+    "react-notification-system": "^0.2.17",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "redux": "^3.7.2",
+    "semantic-ui-calendar-react": "^0.6.0",
+    "semantic-ui-css": "^2.3.1",
+    "semantic-ui-react": "^0.79.0",
+    "subscriptions-transport-ws": "^0.9.14"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start:prod": "environment=PRODUCTION react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0"
+  }
+}
