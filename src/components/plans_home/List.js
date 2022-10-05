@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 //import { Grid, Label } from 'semantic-ui-react'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
 import moment from 'moment'
-import { FitHeading, HeadingTitle } from '../plans_home/styled'
+import { FitServiceWrapper, FitHeading, HeadingTitle } from '../plans_home/styled'
 
 import Card  from './PlansItem'
 
@@ -32,7 +32,7 @@ class List extends Component {
       if (expiresOnDate) whenExpires = moment(dateOfExpiration).format('DD/MM/YYYY')
 
       return (
-        <Card id={id} name={name} price={price} quantity={price} day={whenExpires} tablet={4} mobile={8} computer={4} key={id} />
+        <Card id={id} name={name} price={price} quantity={price} clases={classes} day={whenExpires} tablet={4} mobile={8} computer={4} key={id} />
       )
     })
   }
@@ -42,7 +42,7 @@ class List extends Component {
 
     return (
       
-      <section className="fit_service_wrapper shap st sb" id="planes">
+      <FitServiceWrapper id="planes">
         <Container>
           <Row>
             <Col xl={12}  className="offset-xl-0 offset-lg-2 offset-md-1">
@@ -58,7 +58,7 @@ class List extends Component {
             {renderItems}
             </Row>
         </Container>
-    </section>
+    </FitServiceWrapper>
     )
   }
 }
