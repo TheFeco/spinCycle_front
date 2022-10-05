@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Grid } from 'semantic-ui-react'
+import { Container, Row, Col } from 'react-awesome-styled-grid'
 
 const handleClick = (e,datos) => {
     // 👇️ refers to the div element
@@ -7,13 +8,13 @@ const handleClick = (e,datos) => {
   }
 
 const Card = (props) => (
-  <Grid.Column {...props}>
+  <Col lg={3} sm={6} {...props}>
     <div className="fit_servicebox" onClick={e => handleClick(e,props)}>
           <h1>{props.name}</h1>
           <h2>$ {parseFloat(props.price).toFixed(2)}</h2>
           <p>Expira en {props.day}</p>
       </div>
-  </Grid.Column>
+  </Col>
 )
 
 const Plans = (props) => (

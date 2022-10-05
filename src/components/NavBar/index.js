@@ -1,4 +1,5 @@
-import React, {useState,Fragment} from 'react'
+import React, { useState, Fragment } from 'react'
+import { withRouter } from 'react-router'
 import {
     NavbarContainer,
     LeftContainer,
@@ -9,12 +10,13 @@ import {
     NavbarLink,
     NavbarLinkExtended,
     Logo,
-    OpenLinkButton
+    OpenLinkButton,
+    LoginLinkButton
 } from '../NavBar/styled';
 
 import LogoImg from '../../assets/imgs/logo-oscuro.png'
 
-const index = () => {
+const index = ({ history }) => {
     const [extendNavbar, setExtendNavbar] = useState(false);
   return (
       <NavbarContainer extendNavbar ={extendNavbar}>
@@ -23,14 +25,14 @@ const index = () => {
                   <Logo src={LogoImg}></Logo>
                 </LeftContainer>
               <RightContainer>
-                  
                   <NavbarLinkContainer>
                       <NavbarLink className="item" href='#inicio'>Abaut US</NavbarLink>
                       <NavbarLink className="item" href='#instructores'>Meet the team</NavbarLink>
                       <NavbarLink className="item" href='#palnes'>Paquetes</NavbarLink>
                       <NavbarLink className="item" href='#contacto'>Contacto</NavbarLink>
                       <NavbarLink className="item" href='#Reservar'>Reservar</NavbarLink>
-                      <NavbarLink className="item" href='#Reservar'>{(props) => (props.logged ? "Mi cuenta" : "Inicar sesión")}</NavbarLink>
+                      <NavbarLink className="item" href='#Reservar'></NavbarLink>
+                      <LoginLinkButton onClick={() => history.push('/login')} >Iniciar sesión</LoginLinkButton>
                       <OpenLinkButton onClick={() => { setExtendNavbar((curr) => !curr) }}>
                           {extendNavbar ? <Fragment> &#10005;</Fragment> : <Fragment> &#8801;</Fragment>}
                       </OpenLinkButton>
@@ -50,4 +52,4 @@ const index = () => {
     </NavbarContainer>
   )
 }
-export default index;
+export default withRouter(index);

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Grid, Label, Container } from 'semantic-ui-react'
+//import { Grid, Label } from 'semantic-ui-react'
+import { Container, Row, Col } from 'react-awesome-styled-grid'
 import moment from 'moment'
-import { ListItem, ListHeader } from '../controls';
+import { FitHeading, HeadingTitle } from '../plans_home/styled'
 
 import Card  from './PlansItem'
 
@@ -42,19 +43,21 @@ class List extends Component {
     return (
       
       <section className="fit_service_wrapper shap st sb" id="planes">
-        <Container textAlign='center'>
-         <div className="col-xl-12 col-lg-8 col-md-10 col-sm-12 col-12 offset-xl-0 offset-lg-2 offset-md-1 text-center">
-            <div className="fit_heading text-center">
-                <h2 className="heading_title">CONOCE NUESTROS PLANES</h2>
-                <p></p>
-            </div>
-          </div>  
+        <Container>
+          <Row>
+            <Col xl={12}  className="offset-xl-0 offset-lg-2 offset-md-1">
+              <FitHeading>
+                  <HeadingTitle>CONOCE NUESTROS PLANES</HeadingTitle>
+                  <p></p>
+              </FitHeading>
+            </Col>
+          </Row>  
         </Container>
-        <Grid>
-            <Grid.Row>
+        <Container>
+            <Row>
             {renderItems}
-            </Grid.Row>
-        </Grid>
+            </Row>
+        </Container>
     </section>
     )
   }
