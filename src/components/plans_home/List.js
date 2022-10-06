@@ -55,7 +55,7 @@ class List extends Component {
         </Container>
         <Container>
             <Row>
-            {renderItems}
+              {renderItems}
             </Row>
         </Container>
     </FitServiceWrapper>

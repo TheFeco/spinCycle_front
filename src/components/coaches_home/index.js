@@ -1,14 +1,15 @@
-import React from "react"
+import React, { useState, Fragment }  from "react"
 import { Swiper, SwiperSlide, autoPlay, SwiperCore } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { Container, Row, Col } from 'react-awesome-styled-grid'
 import {
     FitTrainerWrapper,
     FitHeading,
-    HeadingTitle
+    HeadingTitle,
+    Button
 } from '../coaches_home/styled'
-//import { delay } from "lodash";
-
+import Modal from "./modal";
+//import { Button } from "./modal.styles";
 const susy = require('../../assets/imgs/coach1.png')
 const carmen = require('../../assets/imgs/coach3.png')
 const julia = require('../../assets/imgs/coach5.png')
@@ -19,80 +20,88 @@ const slide_img = [
 ];
 
 
-const Couch  = () => (
-    <FitTrainerWrapper id="instructores">
-        <Container>
-            <Row>
-                <Col lg={12} className="offset-xl-0 offset-lg-2 offset-md-1">
-                    <FitHeading className="fit_heading text-center">
-                        <HeadingTitle className="heading_title">MEET THE TEAM</HeadingTitle>
-                    </FitHeading>
-                </Col>
-            </Row>
-            <Row>
-                <Col md={10}>
-                    <div className="fit_trainer_inner">
-                        <Swiper
-                        spaceBetween={30}
-                        slidesPerView={3}
-                        loop={true}
-                        speed={800}
-                        autoPlay={{
-                            delay: 5000
-                        }}
-                        modules={[Autoplay, Pagination, Navigation]}
-                        breakpoints={{
-                            0: {
-                                slidesPerView: 1,
-                                spaceBetween: 1
-                            },
-                            575: {
-                                slidesPerView: 2,
-                                spaceBetween: 10
-                            },
-                            767: {
-                                slidesPerView: 2,
-                                spaceBetween: 20
-                            },
-                            992: {
-                                slidesPerView: 3,
-                                spaceBetween: 20
-                            },
-                            1200: {
-                                slidesPerView: 3,
+const Couch = () => {
+    const [active, setActive] = useState(false);
+    return (
+        <FitTrainerWrapper id="instructores">
+            <Container>
+                <Row>
+                    <Col lg={12} className="offset-xl-0 offset-lg-2 offset-md-1">
+                        <FitHeading className="fit_heading text-center">
+                            <HeadingTitle className="heading_title">MEET THE TEAM</HeadingTitle>
+                            <Button onClick={() => setActive(true)}>Open Modal</Button>
+                        </FitHeading>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={4} sm={8} md={7} lg={12}>
+                        <div className="fit_trainer_inner">
+                            <Swiper
+                                spaceBetween={30}
+                                slidesPerView={3}
+                                loop={true}
+                                speed={800}
+                                autoPlay={{
+                                    delay: 5000
+                                }}
+                                modules={[Autoplay, Pagination, Navigation]}
+                                breakpoints={{
+                                    0: {
+                                        slidesPerView: 1,
+                                        spaceBetween: 1
+                                    },
+                                    575: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 10
+                                    },
+                                    767: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 20
+                                    },
+                                    992: {
+                                        slidesPerView: 3,
+                                        spaceBetween: 20
+                                    },
+                                    1200: {
+                                        slidesPerView: 3,
                                 
-                                spaceBetween: 30,
-                            }
-                        }}
-                        className="swiper-container"
-                        >
-                        {slide_img.map((data, i) => {
-                            return (
-                                <SwiperSlide>
-                                    <div className="trainer_inner_slider">
-                                        <div className="inner_slider_img">
-                                            <img src={data.img} className="img-fluid" alt="image" />
-                                            <div className="trainer_data">
-                                                <h2>{data.title}</h2>
-                                                <p>{data.description}</p>
-                                                <h3>FUN FACTS</h3>
-                                                <p>{data.fun_fact1}</p>
-                                                <p>{data.fun_fact2}</p>
-                                                <p>{data.fun_fact3}</p>
+                                        spaceBetween: 30,
+                                    }
+                                }}
+                                className="swiper-container"
+                            >
+                                {slide_img.map((data, i) => {
+                                    return (
+                                        <SwiperSlide key={i}>
+                                            <div className="trainer_inner_slider">
+                                                <div className="inner_slider_img">
+                                                    <img src={data.img} className="img-fluid" alt="image" />
+                                                    <div className="trainer_data">
+                                                        <h2>{data.title}</h2>
+                                                        <p>{data.description}</p>
+                                                        <h3>FUN FACTS</h3>
+                                                        <p>{data.fun_fact1}</p>
+                                                        <p>{data.fun_fact2}</p>
+                                                        <p>{data.fun_fact3}</p>
+                                                    </div>
+                                                </div>
+                                                <h1 className="fit_trainer_title">{data.name}</h1>
                                             </div>
-                                        </div>
-                                        <h1 className="fit_trainer_title">{ data.name }</h1>
-                                    </div>
-                                </SwiperSlide>
-                            );
-                        })}
-                        </Swiper>
-                    </div>
-                </Col>
-            </Row>
-        </Container>
-      
-    </FitTrainerWrapper>
-)
+                                        </SwiperSlide>
+                                    );
+                                })}
+                            </Swiper>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+            <Modal
+                active={active}
+                hideModal={() => setActive(false)}
+            >
+            </Modal>
+        </FitTrainerWrapper>
+    )
+}
 
 export default Couch

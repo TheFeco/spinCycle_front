@@ -10,7 +10,7 @@ const handleClick = (e,datos) => {
   }
 
 const Card = (props) => (
-  <Col lg={3} sm={6} {...props}>
+  <Col lg={4} md={2} sm={4} {...props}>
     <FitPriceBox onClick={e => handleClick(e,props)}>
           <h1>{props.clases} { (props.clases > 1) ? " CLASES" : " CLASE"}</h1>
           <h2>$ {parseFloat(props.price).toFixed(2)}</h2>

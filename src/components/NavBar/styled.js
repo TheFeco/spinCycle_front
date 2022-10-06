@@ -8,7 +8,7 @@ export  const NavbarContainer = styled.nav`
     background-color: black;
     display: flex;
     flex-direction: column;
-    @media (min-width: 700px) {
+    @media (min-width: 800px) {
        height: 80px;
     }
 `;
@@ -47,7 +47,7 @@ export const NavbarLink = styled(AnchorLink)`
     margin: 10px;
     //padding: 25px 0 0 0;
     @media (max-width: 800px) {
-        font-size: large;
+        display: none;
     }
     @media (max-width: 700px) {
         display: none;
@@ -73,7 +73,7 @@ export const OpenLinkButton = styled.button`
     color: white;
     font-size: 45px;
     cursor: pointer;
-    @media (min-width: 700px) {
+    @media (min-width: 800px) {
         display: none;
     }
 `;
@@ -152,7 +152,7 @@ export const LoginLinkButton = styled.button`
         visibility: hidden;
         }
     }
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
         display: none;
     }
 `;
@@ -160,7 +160,7 @@ export const NavbarExtendedContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-     @media (min-width: 700px) {
+     @media (min-width: 800px) {
         display: none;
     }
 `;
