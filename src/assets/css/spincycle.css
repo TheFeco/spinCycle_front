@@ -128,124 +128,6 @@ p {
     margin-bottom: 50px;
 }
 /********************************************************
-    Price Table css start
-*******************************************************/
-.prices {
-    width: 100%;
-    float: left;
-}
-
-.gm_price_wrapper {
-    float: left;
-    width: 100%;
-    background-color: var(--main-bg-color);
-    padding: 80px 0;
-}
-
-.fit_price_box {
-    float: left;
-    width: 100%;
-    text-align: center;
-    border: 1px solid #e1e1e1;
-    padding: 20px;
-    margin-bottom: 20px;
-    position: relative;
-    background-color: var(--white-color);
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-.fit_price_box:hover {
-    background-color: #ffffff;
-    border: 1px solid transparent;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-    box-shadow: 0px 15px 20px -10px rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: 0px 15px 20px -10px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0px 15px 20px -10px rgba(0, 0, 0, 0.5);
-    -o-box-shadow: 0px 15px 20px -10px rgba(0, 0, 0, 0.5);
-    -ms-box-shadow: 0px 15px 20px -10px rgba(0, 0, 0, 0.5);
-}
-
-.fit_price_box h2 {
-    margin: 0px auto;
-    width: 200px;
-    height: 50px;
-    line-height: 50px;
-    color: var(--yellow-color);
-    text-transform: uppercase;
-    font-size: 32px;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-.fit_price_box h5 {
-    margin: 0px auto;
-    width: 200px;
-    height: 50px;
-    line-height: 50px;
-    text-transform: uppercase;
-    font-size: 16px;
-    color: var(--yellow-color);
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-.fit_price_box h1 {
-    float: left;
-    width: 100%;
-    font-size: 45px;
-    color: var(--yellow-color);
-    margin: 30px 0px;
-}
-
-.fit_price_box h1 sup {
-    font-size: 20px;
-    top: -50px;
-}
-
-.fit_price_box h1 sub {
-    font-size: 20px;
-    bottom: 0;
-}
-
-.fit_price_box p {
-    float: left;
-    width: 100%;
-    font-size: 16px;
-    margin: 0px 0px 20px 0px;
-    color: var(--yellow-color);
-    font-weight: 600;
-}
-
-.fit_price_box ul {
-    float: left;
-    width: 100%;
-    margin: 0px 0px 30px 0px;
-    padding: 0px;
-}
-
-.fit_price_box ul li {
-    float: left;
-    width: 100%;
-    list-style: none;
-    padding: 5px 0px;
-}
-
-/*---------- Price Table css end -------*/
-/********************************************************
     Services section
 *******************************************************/
 /*.fit_service_wrapper {
@@ -362,6 +244,142 @@ p {
     to {
         transform: rotate(360deg);
     }
+}
+/********************************************************
+    Trainer section
+*******************************************************/
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.trainer_inner_slider {
+    text-align: center;
+}
+
+.inner_slider_img {
+    background: var(--main-bg-color);
+    border-radius: 10px;
+    padding: 15px 20px 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.inner_slider_img:after,
+.inner_slider_img:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 10px;
+    -webkit-transition: all 0.3s linear 0s;
+    -moz-transition: all 0.3s linear 0s;
+    -ms-transition: all 0.3s linear 0s;
+    -o-transition: all 0.3s linear 0s;
+    transition: all 0.3s linear 0s;
+}
+
+.inner_slider_img:after {
+    height: 85%;
+    background: var(--orange-color);
+    ;
+    z-index: -1;
+}
+
+.inner_slider_img:before {
+    background: var(--main-bg-color);
+    z-index: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.fit_trainer_inner .swiper-container {
+    padding: 0 15px;
+}
+
+.inner_slider_img:hover:before {
+    opacity: 0.8;
+    visibility: visible;
+}
+
+.inner_slider_img:hover:after {
+    left: -10px;
+    right: -10px;
+}
+
+.trainer_data h2 {
+    font-size: 20px;
+    color:white;
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.trainer_data h3 {
+    color: white;
+}
+
+.trainer_data .common_social {
+    margin-top: 15px;
+}
+
+.trainer_data {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s linear 0s;
+    -moz-transition: all 0.3s linear 0s;
+    -ms-transition: all 0.3s linear 0s;
+    -o-transition: all 0.3s linear 0s;
+    transition: all 0.3s linear 0s;
+}
+
+.inner_slider_img:hover .trainer_data {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+}
+
+.fit_trainer_title {
+    font-size: 26px;
+    text-transform: uppercase;
+    color: white;
+    margin: 15px 0 5px;
+}
+
+.trainer_desig {
+    font-size: 22px;
+}
+
+.swiper-button-next.trainer_nav {
+    right: 15%;
+}
+
+.swiper-button-prev.trainer_nav {
+    left: 15%;
+}
+
+.next_nav_btn {
+    right: 18% !important;
+}
+
+.prev_nav_btn {
+    left: 18% !important;
+}
+
+.mr-2,
+.mx-2 {
+    margin-right: .5rem !important;
 }
 /********************************************************
     23. Responsive  CSS
