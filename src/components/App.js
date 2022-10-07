@@ -3,15 +3,23 @@ import Menu from './base/Menu'
 import Sidebar from './base/Sidebar'
 import Auth from '../config/session'
 import Login from './login'
-import Header from './page/Header'
-import HeaderMobile from './page/HeaderMobile'
-import Coachs from './page/Coachs'
+//import Header from './page/Header'
+import Hero from './hero_home'
+//import HeaderMobile from './page/HeaderMobile'
+import Coachs from './coaches_home'
 import Footer from './page/Footer'
-import Plans from './page/Plans'
+//import Plans from './page/Plans'
+import Plans from './plans_home'
+import Navbar from './NavBar'
 import { Container, Responsive, Grid } from 'semantic-ui-react'
 import { withRouter } from 'react-router'
 import 'semantic-ui-css/semantic.min.css'
+import 'swiper/swiper.min.css'
 import '../assets/css/main.css'
+import '../assets/css/spincycle.css'
+import { Query } from 'react-apollo'
+import { allPlans } from '../api/queries/plans';
+
 
 class App extends Component {
   state = { loading: true, logged: false }
@@ -41,16 +49,19 @@ class App extends Component {
   renderLanding = () => {
     return (
       <div className="pusher">
-        <Responsive {...Responsive.onlyMobile} className="appContainer">
+        {/*<Responsive {...Responsive.onlyMobile} className="appContainer">
           <HeaderMobile>
             <Header menuVisible={false} />
-            <Plans tablet={4} mobile={8} />
+            <Plans />
             <Coachs />
             <Footer />
           </HeaderMobile>
         </Responsive>
-        <Responsive minWidth={Responsive.onlyTablet.minWidth} className="appContainer">
-          <Header menuVisible={true} />
+    <Responsive minWidth={Responsive.onlyTablet.minWidth} className="appContainer">*/}
+        {/*<Header menuVisible={true} />*/}
+        <Responsive className="appContainer">
+          <Navbar logged={this.statelogged} />
+          <Hero />
           <Plans />
           <Coachs />
           <Footer />
@@ -98,7 +109,7 @@ class App extends Component {
 
     if (location.pathname === '/cerrar') {
       Auth.logout()
-      window.location.href = '/login'
+      window.location.href = '/'
     }
 
     return (
