@@ -1,30 +1,26 @@
 import React, { Fragment } from "react";
-import { Container, Row, Col } from 'react-awesome-styled-grid'
 import {
   ModalBlock,
-  ModalBody,
-  ModalClose,
-  ModalContainer,
-  ModalFooter,
-  ModalHeader,
   ModalOverlay,
-  ModalTitle,
-  Modal2,
-  Modal2Close
 } from "./styled";
-import { Background, ModalWrapper, ModalImg, ModalContent, CloseModalButton } from './modalstyled';
+import { ModalWrapper, ModalImg, ModalContent, CloseModalButton } from './modalstyled';
 
-const Modal = ({ title, footer, children, active, hideModal }) => {
+const Modal = ({ trainer, active, hideModal }) => {
   return (
     <Fragment>
       {active && (
         <ModalBlock>
             <ModalOverlay onClick={()=> hideModal()}></ModalOverlay>
             <ModalWrapper >
-              <ModalImg src={require('./modal.png')} alt='camera' />
+              <ModalImg  src={trainer.img} alt={trainer.name} />
               <ModalContent>
-                <h1>Are you ready?</h1>
-                <p>Get exclusive access to our next launch.</p>
+                <h1>{trainer.name}</h1>
+                <h2>{trainer.title}</h2>
+                <p>{trainer.description}</p>
+                <h3>FUN FACTS</h3>
+                <p><span>{trainer.fun_fact1}</span></p>
+                <p><span>{trainer.fun_fact2}</span></p>
+                <p><span>{trainer.fun_fact3}</span></p>
               </ModalContent>
               <CloseModalButton
                     aria-label='Close modal'

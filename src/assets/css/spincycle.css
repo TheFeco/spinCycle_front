@@ -13,6 +13,7 @@
     font-family: "Montserrat";
     src: url("../fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
 }
+
 p {
     font-size: 15px;
     margin: 0px;
@@ -189,7 +190,7 @@ p {
 .fit_servicebox:after {
     content: "";
     position: absolute;
-    background: var(--orange-color);
+    background: var(--yellow-color);
     width: 80%;
     left: 0;
     right: 0;
@@ -415,7 +416,7 @@ p {
 
 .inner_slider_img:after {
     height: 85%;
-    background: var(--orange-color);
+    background: var(--yellow-color);
     ;
     z-index: -1;
 }
@@ -433,7 +434,7 @@ p {
 
 .inner_slider_img:hover:before {
     opacity: 0.8;
-    visibility: visible;
+    visibility: hidden;
 }
 
 .inner_slider_img:hover:after {
@@ -476,8 +477,8 @@ p {
 }
 
 .inner_slider_img:hover .trainer_data {
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
     top: 0;
 }
 

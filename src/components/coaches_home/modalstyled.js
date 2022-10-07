@@ -34,12 +34,35 @@ export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   line-height: 1.8;
+  padding-left: 5px;
+  padding-right: 5px;
   color: white;
-  p {
-    margin-bottom: 1rem;
+  h1{
+    font-weight: bold;
   }
+  h2{
+    font-size: x-large;
+    margin-top:3px;
+  }
+  h3{
+    text-align: start;
+  }
+  p {
+    line-height: 16px;
+    margin-bottom: 0.1rem;
+    color:rgb(255, 171, 76);
+  }
+  span {
+    text-align: start;
+
+  }
+  @media (max-width: 800px) {
+    h2{
+      font-size: larger;
+    }
+    }
 `;
 
 export const CloseModalButton = styled.a`
