@@ -16,8 +16,9 @@ import {
 
 import LogoImg from '../../assets/imgs/logo-oscuro.png'
 
-const index = ({ history }) => {
+const index = ({ history, islogged }) => {
     const [extendNavbar, setExtendNavbar] = useState(false);
+    console.log(islogged);
   return (
       <NavbarContainer extendNavbar ={extendNavbar}>
           <NavbarInnerContainer>
@@ -32,7 +33,14 @@ const index = ({ history }) => {
                       <NavbarLink className="item" href='#contacto'>Contacto</NavbarLink>
                       <NavbarLink className="item" href='#Reservar'>Reservar</NavbarLink>
                       <NavbarLink className="item" href='#Reservar'></NavbarLink>
-                      <LoginLinkButton onClick={() => history.push('/login')} >Iniciar sesión</LoginLinkButton>
+                      {islogged &&(
+                         
+                            <LoginLinkButton onClick={() => history.push('/panel')} >Mi sesión</LoginLinkButton>
+                      )}
+                      {!islogged &&(
+                            <LoginLinkButton onClick={() => history.push('/login')} >Iniciar sesión</LoginLinkButton>
+                      )}
+                      
                       <OpenLinkButton onClick={() => { setExtendNavbar((curr) => !curr) }}>
                           {extendNavbar ? <Fragment> &#10005;</Fragment> : <Fragment> &#8801;</Fragment>}
                       </OpenLinkButton>

@@ -60,7 +60,7 @@ class App extends Component {
     <Responsive minWidth={Responsive.onlyTablet.minWidth} className="appContainer">*/}
         {/*<Header menuVisible={true} />*/}
         <Responsive className="appContainer">
-          <Navbar logged={this.statelogged} />
+          <Navbar islogged={this.state.logged} />
           <Hero />
           <Plans />
           <Coachs />
