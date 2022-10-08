@@ -18,7 +18,6 @@ import LogoImg from '../../assets/imgs/logo-oscuro.png'
 
 const index = ({ history, islogged }) => {
     const [extendNavbar, setExtendNavbar] = useState(false);
-    console.log(islogged);
   return (
       <NavbarContainer extendNavbar ={extendNavbar}>
           <NavbarInnerContainer>

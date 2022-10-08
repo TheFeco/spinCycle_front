@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import Menu from './base/Menu'
+import NavBarMenu from './base/NavBar'
 import Sidebar from './base/Sidebar'
 import Auth from '../config/session'
 import Login from './login'
@@ -37,8 +38,8 @@ class App extends Component {
     return (
       <Fragment>
         <Grid>
-          <Grid.Column className="menu__app">
-            <Menu />
+          <Grid.Column className="">
+            <NavBarMenu />
           </Grid.Column>
         </Grid>
         <Login />
