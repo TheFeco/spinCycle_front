@@ -1,4 +1,4 @@
-export const BASE_URL_DEV = 'https://spincycle.srv.monopolio.org/graphql';
+export const BASE_URL_DEV = 'https://spincycle.mx/graphql';
 export const BASE_URL_PROD = 'http://google.com';
 export const LOGIN_AZURE = '';
 

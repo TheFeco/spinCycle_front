@@ -2,7 +2,9 @@ import React, { Component } from "react"
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { useStripe, useElements, PaymentElement } from '@stripe/react-stripe-js';
-import CheckoutForm from '../CheckoutForm';
+//import CheckoutForm from '../CheckoutForm';
+import StripePaymentForm from '../DemoStripe';
+
 
 const stripePromise = loadStripe('pk_test_51Lq1d0Fb3RklvSdcc68KEst3o35qIoYU9yCAILdQxpzQdxsFuFyO8Mp2PoysjWXVw1oprqTm6wbxulGDwbI3q6o9005RHxH19r');
 
@@ -14,9 +16,7 @@ const options = {
 
 
 const Payments = (props) => (
-  <Elements stripe={stripePromise}>
-        <CheckoutForm />
-    </Elements>
+  <StripePaymentForm></StripePaymentForm>
 )
 
 export default Payments;
