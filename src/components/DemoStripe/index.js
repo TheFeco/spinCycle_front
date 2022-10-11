@@ -14,8 +14,6 @@ import axios from "axios";
 
 const stripePromise = loadStripe("pk_test_51Lq1d0Fb3RklvSdcc68KEst3o35qIoYU9yCAILdQxpzQdxsFuFyO8Mp2PoysjWXVw1oprqTm6wbxulGDwbI3q6o9005RHxH19r");
 
-
-
 const handleSubmit = (stripe, elements) => async () => {
   const cardElement = elements.getElement(CardElement);
 
@@ -42,7 +40,7 @@ const PaymentForm = () => {
         }
     
     const getClientSecret = () => {
-        axios.post("http://127.0.0.1:8000/webhook", params).then((response) => {
+        axios.post("http://127.0.0.1:8000/api/webhook", params).then((response) => {
             console.log(response);
         });
     }

@@ -26,12 +26,10 @@ const index = ({ history, islogged }) => {
                 </LeftContainer>
               <RightContainer>
                   <NavbarLinkContainer>
-                      <NavbarLink className="item" href='#inicio'>Abaut US</NavbarLink>
                       <NavbarLink className="item" href='#instructores'>Meet the team</NavbarLink>
-                      <NavbarLink className="item" href='#palnes'>Paquetes</NavbarLink>
+                      <NavbarLink className="item" href='#planes'>Paquetes</NavbarLink>
                       <NavbarLink className="item" href='#contacto'>Contacto</NavbarLink>
-                      <NavbarLink className="item" href='#Reservar'>Reservar</NavbarLink>
-                      <NavbarLink className="item" href='#Reservar'></NavbarLink>
+                      
                       {islogged &&(
                          
                             <LoginLinkButton onClick={() => history.push('/panel')} >Mi sesión</LoginLinkButton>

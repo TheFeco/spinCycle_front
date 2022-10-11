@@ -9,7 +9,7 @@ import Coachs from './coaches_home'
 import Contact from './Contact_home'
 import Footer from './Footer_home'
 import Plans from './plans_home'
-import ReservationsHome from './reservation_home'
+//import ReservationsHome from './reservation_home'
 import Navbar from './NavBar'
 import { Container, Responsive, Grid } from 'semantic-ui-react'
 import { withRouter } from 'react-router'
@@ -52,7 +52,6 @@ class App extends Component {
           <Hero />
           <Plans />
           <Coachs />
-          <ReservationsHome className="bg-gray" />
           <Contact />
           <Footer />
         </Responsive>

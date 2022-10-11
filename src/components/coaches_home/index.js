@@ -1,9 +1,8 @@
 import React, { useState, useRef, Fragment }  from "react"
 import { Swiper, SwiperSlide } from "swiper/react";
-//import { Autoplay, Pagination, Navigation } from "swiper";
 import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper';
-//import { Container, Row, Col } from 'react-awesome-styled-grid'
-import { Grid } from "@material-ui/core";
+import { Grid, Container } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core/styles';
 import {
     FitTrainerWrapper,
     FitHeading,
@@ -11,6 +10,12 @@ import {
 } from '../coaches_home/styled'
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 import Modal from "./modal";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+}));
 
 const carmen = require('../../assets/imgs/trainer1.jpg')
 const ivonne = require('../../assets/imgs/trainer2.jpg')
@@ -28,7 +33,7 @@ const slide_img = [
 SwiperCore.use([Navigation])
 
 const Couch = () => {
-    
+     const classes = useStyles();
     const prevRef = useRef(null);
     const nextRef = useRef(null);
 
@@ -41,17 +46,17 @@ const Couch = () => {
     
     
     return (
-        <FitTrainerWrapper id="instructores">
-            <Grid>
-                <Grid container>
+        <FitTrainerWrapper id="instructores"  className={classes.root}>
+            <Container>
+                <Grid container justifyContent="center">
                     <Grid item lg={12} className="offset-xl-0 offset-lg-2 offset-md-1">
                         <FitHeading className="fit_heading text-center">
                             <HeadingTitle className="heading_title">MEET THE TEAM</HeadingTitle>
                         </FitHeading>
                     </Grid>
                 </Grid>
-                <Grid container>
-                    <Grid  item xs={4} sm={8} md={7} lg={12}>
+                <Grid container justifyContent="center">
+                    <Grid  item xs={4} sm={9} md={7} lg={12}>
                         <div className="fit_trainer_inner">
                             <Swiper
                                 modules={[Autoplay, Pagination, Navigation]}
@@ -119,7 +124,7 @@ const Couch = () => {
                         </div>
                     </Grid>
                 </Grid>
-            </Grid>
+            </Container>
             <Modal
                 active={active}
                 trainer = {trainer} 
