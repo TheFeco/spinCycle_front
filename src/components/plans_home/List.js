@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'react-awesome-styled-grid'
 import moment from 'moment'
 import { FitServiceWrapper, FitHeading, HeadingTitle } from '../plans_home/styled'
-import Payments from './Payment'
+//import Payments from './Payment'
 import Card from './PlansItem'
 import Auth from "../../config/session"
 
@@ -61,9 +61,6 @@ class List extends Component {
             <Row>
               {renderItems}
             </Row>
-          <Row>
-            <Payments />
-          </Row>
         </Container>
     </FitServiceWrapper>
     )
