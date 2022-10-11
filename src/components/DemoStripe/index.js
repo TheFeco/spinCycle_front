@@ -6,6 +6,8 @@ import {
   useElements,
   useStripe
 } from "@stripe/react-stripe-js";
+import { Container,Row, Col } from "react-flexbox-grid";
+import { CardBox } from "./styled";
 import { loadStripe } from "@stripe/stripe-js";
 //import { useState } from "react";
 import axios from "axios";
@@ -67,10 +69,11 @@ const PaymentForm = () => {
     };
   return (
     <div>
-      <h1>stripe form</h1>
-      <CardElement />
-      <button onClick={(e)=>payMoney(e)}>Buy</button>
+        <h1>stripe form</h1>
+        <CardElement />
+        <button onClick={(e)=>payMoney(e)}>Buy</button>
     </div>
+    
   );
 }
 

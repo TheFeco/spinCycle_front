@@ -349,7 +349,8 @@ body {
 
 .footer {
   padding: 10px;
-  min-height: 250px;
+  /*min-height: 250px;*/
+  margin-top: 50px;
   position: relative;
 }
 

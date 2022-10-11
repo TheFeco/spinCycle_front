@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-awesome-styled-grid'
 import moment from 'moment'
 import { FitServiceWrapper, FitHeading, HeadingTitle } from '../plans_home/styled'
 import Payments from './Payment'
-import Card  from './PlansItem'
+import Card from './PlansItem'
 
 class List extends Component {
 
@@ -30,10 +30,13 @@ class List extends Component {
 
       if (expiresOnFinalMonth) whenExpires = 'Final del mes'
       if (expiresOnDate) whenExpires = moment(dateOfExpiration).format('DD/MM/YYYY')
-
-      return (
-        <Card id={id} name={name} price={price} quantity={price} clases={classes} day={whenExpires} tablet={4} mobile={8} computer={4} key={id} />
-      )
+      let plansWebActives = [{ id: "5b97155cbbac1015833c4fe8" }, { id: "5b9715a4bbac1015833c4fea" }, { id: "5b971645bbac1015833c4feb" }, { id: "5b97165cbbac1015833c4fed" }];
+      if (plansWebActives.some(planWebActive => planWebActive.id == id)) {
+        return (
+          <Card id={id} name={name} price={price} quantity={price} clases={classes} day={whenExpires} tablet={4} mobile={8} computer={4} key={id} />
+        
+        )
+      }
     })
   }
 

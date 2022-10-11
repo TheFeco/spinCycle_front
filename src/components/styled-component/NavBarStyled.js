@@ -16,6 +16,7 @@ export const NavbarWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 2px solid rgb(38, 52, 83);;
 `
 export const Logo = styled.span`
     font-weight: bold;

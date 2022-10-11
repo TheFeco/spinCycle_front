@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Input, Button, Form, Grid, Image } from 'semantic-ui-react'
+import { Input, Button, Form, Grid } from 'semantic-ui-react'
 import { withRouter } from 'react-router'
 import { Link } from 'react-router-dom'
 import { Mutation, Query } from 'react-apollo'
@@ -11,6 +11,7 @@ import moment from 'moment'
 
 class Login extends Component {
   state = { user: '', password: '', name: '', email: '', phone: '', repeat: '', isLogin: false }
+  
 
   componentDidMount() {
     const { history, location } = this.props
@@ -227,14 +228,13 @@ class Login extends Component {
 
     return (
       <Fragment>
-        <Grid>
+        <Grid style={{backgroundColor:"#F3F6F8"}}>
           <Grid.Row style={{paddingTop: 0}}>
             <Grid.Column mobile={16} computer={9}>
               <div className="ui two column centered grid full-screen">
                 <div className="column" style={{ marginTop: 75 }}>
                   {renderView}
                   <br />
-
                 </div>
               </div>
             </Grid.Column>

@@ -1,19 +1,41 @@
-import React from 'react'
-import { Avatar, Logo, NavbarContainer,NavbarWrapper, TopLeft, TopRight } from '../styled-component/NavBarStyled'
+import React, { Component } from 'react'
+import { withRouter, Link } from 'react-router-dom'
+import Auth from '../../config/session'
+import { Avatar, Logo, NavbarContainer, NavbarWrapper, TopLeft, TopRight } from '../styled-component/NavBarStyled'
+
 const avatar = require('../../assets/user.jpg')
 const logo = require('../../assets/imgs/logo-oscuro.png')
-const NavBar = () => {
-  return (
-    <NavbarContainer>
+
+
+class NavBar extends Component {
+    state = { loading: true, logged: false }
+
+    componentDidMount() {
+    this.validateLogin()
+    }
+
+    async validateLogin() {
+        const response = await Auth.isLogged()
+        this.setState({ loading: false, logged: response })
+    }
+    render() {
+
+    const { history: { push }} = this.props;
+
+    return (
+        <NavbarContainer>
           <NavbarWrapper>
               <TopLeft>
-                  <Logo>SPINCYCLE</Logo>
+                  <Link className="item" to="/" ><Logo>Spincycle</Logo></Link>
               </TopLeft>
               <TopRight>
-                  <Avatar src={avatar} alt="avatar" />
+                {this.state.logged &&(
+                    <Avatar src={avatar} alt="avatar" />  
+                )}
               </TopRight>
           </NavbarWrapper>  
-    </NavbarContainer>
-  )
+        </NavbarContainer>
+    );
+  }
 }
-export default NavBar;
+export default withRouter(NavBar);

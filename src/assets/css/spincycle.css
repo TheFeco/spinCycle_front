@@ -20,6 +20,10 @@ p {
     line-height: 23px;
 }
 
+.mt-10{
+    margin-top: 10px;
+}
+
 .hero {
     /*background-image: url("https://unsplash.it/1500?random");*/
     background-image: url("../imgs/Hero-bg-2.png");
@@ -36,6 +40,128 @@ p {
     width: 100%;
     height: 450px;
     /*background-color: rgba(0, 0, 0, 0);*/
+}
+
+.contact-section {
+    background: #0a0a0a;
+    padding: 30px 0 15px;
+}
+.about_nav {
+    background: var(--second-bg-color);
+    color: var(--white-color);
+    width: 50px;
+    height: 50px;
+    transform: skewX(10deg);
+    -o-transform: skewX(10deg);
+    -ms-transform: skewX(10deg);
+    -moz-transform: skewX(10deg);
+    -webkit-transform: skewX(10deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-transition: all 0.3s linear 0s;
+    -moz-transition: all 0.3s linear 0s;
+    -ms-transition: all 0.3s linear 0s;
+    -o-transition: all 0.3s linear 0s;
+    transition: all 0.3s linear 0s;
+}
+
+.about_nav:hover,
+.about_nav:focus {
+    background: var(--yellow-color);
+}
+.fit-icon {
+    font-size: 30px !important;
+    color: var(--white-color);
+    display: inline-block !important;
+    height: 65px !important;
+    width: 65px !important;
+    background: var(--yellow-color);
+    border-radius: 50%;
+    line-height: 65px;
+    text-align: center;
+    float: left;
+    margin-right: 20px;
+    padding: 5px;
+}
+.fit-iconText {
+    overflow: hidden;
+    color: #ffffff;
+    margin-bottom: 0;
+    padding-top: 10px;
+    min-width: 192px;
+}
+
+/********************************************************/
+.card {
+    max-width: 500px;
+    margin: auto;
+    color: black;
+    border-radius: 20 px;
+}
+
+p {
+    margin: 0px;
+}
+
+.container .h8 {
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.btn.btn-primary {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
+    border: none;
+    transition: 0.5s;
+    background-size: 200% auto;
+
+}
+
+
+.btn.btn.btn-primary:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+.btn.btn-primary:hover .fas.fa-arrow-right {
+    transform: translate(15px);
+    transition: transform 0.2s ease-in;
+}
+
+.form-control {
+    color: white;
+    background-color: #223C60;
+    border: 2px solid transparent;
+    height: 60px;
+    padding-left: 20px;
+    vertical-align: middle;
+}
+
+.form-control:focus {
+    color: white;
+    background-color: #0C4160;
+    border: 2px solid #2d4dda;
+    box-shadow: none;
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+::placeholder {
+    font-size: 14px;
+    font-weight: 600;
 }
 /********************************************************
     4. Header CSS
@@ -494,12 +620,21 @@ p {
 }
 
 .swiper-button-next.trainer_nav {
-    right: 15%;
+    right: 0%;
+    top: 30% ;
+    position: absolute;
+    z-index: 9;
+    cursor: pointer;
 }
 
 .swiper-button-prev.trainer_nav {
-    left: 15%;
+    left: 0%;
+    top: 30%;
+    position: absolute;
+    z-index: 9;
+    
 }
+
 
 .next_nav_btn {
     right: 18% !important;
