@@ -5,6 +5,7 @@ import moment from 'moment'
 import { FitServiceWrapper, FitHeading, HeadingTitle } from '../plans_home/styled'
 import Payments from './Payment'
 import Card from './PlansItem'
+import Auth from "../../config/session"
 
 class List extends Component {
 
@@ -23,7 +24,7 @@ class List extends Component {
         status,
         expiresOnFinalMonth,
         expiresOnDate,
-        dateOfExpiration 
+        dateOfExpiration,
       } = plan
 
       var whenExpires = `${expiration} días`

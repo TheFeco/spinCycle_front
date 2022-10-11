@@ -9,6 +9,7 @@ import Coachs from './coaches_home'
 import Contact from './Contact_home'
 import Footer from './Footer_home'
 import Plans from './plans_home'
+import ReservationsHome from './reservation_home'
 import Navbar from './NavBar'
 import { Container, Responsive, Grid } from 'semantic-ui-react'
 import { withRouter } from 'react-router'
@@ -51,6 +52,7 @@ class App extends Component {
           <Hero />
           <Plans />
           <Coachs />
+          <ReservationsHome className="bg-gray" />
           <Contact />
           <Footer />
         </Responsive>
@@ -61,21 +63,23 @@ class App extends Component {
   renderContent = () => {
     return (
       <Fragment>
-        <Grid>
-          <Grid.Column mobile={16} tablet={16} computer={16} className="menu__app">
-            <Menu />
-          </Grid.Column>
-        </Grid>
-        <Grid style={{marginTop: 50}}>
-          <Grid.Column mobile={0} tablet={4} computer={3}>
-            <Sidebar />
-          </Grid.Column>
-          <Grid.Column mobile={16} tablet={12} computer={13}>
-            <Container className="container">
-              {this.props.children}
-            </Container>
-          </Grid.Column>
-        </Grid>
+        <div className='bg-white'>
+          <Grid>
+            <Grid.Column mobile={16} tablet={16} computer={16} className="menu__app">
+              <NavBarMenu />
+            </Grid.Column>
+          </Grid>
+          <Grid style={{marginTop: 50}}>
+            <Grid.Column mobile={0} tablet={4} computer={3}>
+              <Sidebar className="bg-gray" />
+            </Grid.Column>
+            <Grid.Column mobile={16} tablet={12} computer={13}>
+              <Container className="container">
+                {this.props.children}
+              </Container>
+            </Grid.Column>
+            </Grid>
+          </div>
       </Fragment>
     )
   }

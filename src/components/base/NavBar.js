@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import Auth from '../../config/session'
+import { ExitToApp } from '@material-ui/icons'
 import { Avatar, Logo, NavbarContainer, NavbarWrapper, TopLeft, TopRight } from '../styled-component/NavBarStyled'
 
 const avatar = require('../../assets/user.jpg')
@@ -30,7 +31,7 @@ class NavBar extends Component {
               </TopLeft>
               <TopRight>
                 {this.state.logged &&(
-                    <Avatar src={avatar} alt="avatar" />  
+                   <Link to="/cerrar"> <ExitToApp className='itemicon'  />  </Link>
                 )}
               </TopRight>
           </NavbarWrapper>  

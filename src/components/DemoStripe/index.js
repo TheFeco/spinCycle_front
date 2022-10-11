@@ -6,13 +6,15 @@ import {
   useElements,
   useStripe
 } from "@stripe/react-stripe-js";
-import { Container,Row, Col } from "react-flexbox-grid";
 import { CardBox } from "./styled";
+import { Grid } from "@material-ui/core";
 import { loadStripe } from "@stripe/stripe-js";
 //import { useState } from "react";
 import axios from "axios";
 
 const stripePromise = loadStripe("pk_test_51Lq1d0Fb3RklvSdcc68KEst3o35qIoYU9yCAILdQxpzQdxsFuFyO8Mp2PoysjWXVw1oprqTm6wbxulGDwbI3q6o9005RHxH19r");
+
+
 
 const handleSubmit = (stripe, elements) => async () => {
   const cardElement = elements.getElement(CardElement);
@@ -47,7 +49,7 @@ const PaymentForm = () => {
 
     const payMoney = async (e) => {
         e.preventDefault();
-        const clientSecret = 'pi_3LqQ76Fb3RklvSdc0ejZGZ9d_secret_uIYplpCTlKTvxuEM9d7NXN0P6';
+        const clientSecret = getClientSecret();//'pi_3LqQ76Fb3RklvSdc0ejZGZ9d_secret_uIYplpCTlKTvxuEM9d7NXN0P6';
         const paymentResult = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: elements.getElement(CardElement),
@@ -71,7 +73,7 @@ const PaymentForm = () => {
     <div>
         <h1>stripe form</h1>
         <CardElement />
-        <button onClick={(e)=>payMoney(e)}>Buy</button>
+        <button onClick={(e)=>payMoney(e)}>Pagar</button>
     </div>
     
   );

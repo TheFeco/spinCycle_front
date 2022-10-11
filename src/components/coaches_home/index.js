@@ -2,7 +2,8 @@ import React, { useState, useRef, Fragment }  from "react"
 import { Swiper, SwiperSlide } from "swiper/react";
 //import { Autoplay, Pagination, Navigation } from "swiper";
 import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper';
-import { Container, Row, Col } from 'react-awesome-styled-grid'
+//import { Container, Row, Col } from 'react-awesome-styled-grid'
+import { Grid } from "@material-ui/core";
 import {
     FitTrainerWrapper,
     FitHeading,
@@ -41,16 +42,16 @@ const Couch = () => {
     
     return (
         <FitTrainerWrapper id="instructores">
-            <Container>
-                <Row>
-                    <Col lg={12} className="offset-xl-0 offset-lg-2 offset-md-1">
+            <Grid>
+                <Grid container>
+                    <Grid item lg={12} className="offset-xl-0 offset-lg-2 offset-md-1">
                         <FitHeading className="fit_heading text-center">
                             <HeadingTitle className="heading_title">MEET THE TEAM</HeadingTitle>
                         </FitHeading>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col xs={4} sm={8} md={7} lg={12}>
+                    </Grid>
+                </Grid>
+                <Grid container>
+                    <Grid  item xs={4} sm={8} md={7} lg={12}>
                         <div className="fit_trainer_inner">
                             <Swiper
                                 modules={[Autoplay, Pagination, Navigation]}
@@ -116,9 +117,9 @@ const Couch = () => {
                             </div>
                             </Swiper>
                         </div>
-                    </Col>
-                </Row>
-            </Container>
+                    </Grid>
+                </Grid>
+            </Grid>
             <Modal
                 active={active}
                 trainer = {trainer} 

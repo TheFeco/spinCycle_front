@@ -1,23 +1,39 @@
-import React, { Component } from "react"
+import React, { Component, useState } from "react"
 import { Grid } from 'semantic-ui-react'
 import { Col } from 'react-awesome-styled-grid'
 import { FitPriceBox } from '../plans_home/styled'
+import Auth from "../../config/session"
 
 
-const handleClick = (e,datos) => {
+
+
+
+const Card = (props) => {
+  const [count, setCount] = useState(0);
+  const [logged, setLogged] = useState();
+  
+  const handleClick = (e, datos) => {
     // 👇️ refers to the div element
+    const isLogged = validateLogin();
+    console.log(logged)
     console.log(datos);
   }
-
-const Card = (props) => (
-  <Col lg={3} md={2} sm={4} {...props}>
-    <FitPriceBox onClick={e => handleClick(e,props)}>
-          <h1>{props.clases} { (props.clases > 1) ? " CLASES" : " CLASE"}</h1>
-          <h2>$ {parseFloat(props.price).toFixed(2)}</h2>
-          <p>Expira en {props.day}</p>
+  const validateLogin = async () => {
+    
+    const response = await Auth.isLogged()
+    setLogged(response)
+  }
+  return (
+    <Col lg={3} md={2} sm={4} {...props}>
+      <FitPriceBox onClick={e => handleClick(e, props)}>
+        <h1>{props.clases} {(props.clases > 1) ? " CLASES" : " CLASE"}</h1>
+        <h2>$ {parseFloat(props.price).toFixed(2)}</h2>
+        <p>Expira en {props.day}</p>
       </FitPriceBox>
-  </Col>
-)
+    </Col>
+  )
+}
+
 
 const Plans = (props) => (
   <div id="planes" className="full height plans">

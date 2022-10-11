@@ -7,6 +7,7 @@
     --txt-color: rgb(173 174 193);
     --orange-color: rgb(251 91 33);
     --yellow-color: rgb(255, 171, 76);
+    --grey-color: rgb(243, 246, 248);
 }
 
 @font-face {
@@ -19,13 +20,23 @@ p {
     margin: 0px;
     line-height: 23px;
 }
-
+.bg-white { 
+    background-color: var(--white-color);
+}
+.bg-black-withe{
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 34%, rgba(255, 255, 255, 1) 34%);
+}
+.bg-gray {
+    background-color: var(--grey-color);
+}
 .mt-10{
     margin-top: 10px;
 }
-
+.container.fit{
+    margin: auto !important;
+}
 .hero {
-    /*background-image: url("https://unsplash.it/1500?random");*/
     background-image: url("../imgs/Hero-bg-2.png");
     background-size: cover;
     background-position: center;
@@ -163,8 +174,44 @@ p {
     font-size: 14px;
     font-weight: 600;
 }
+.card {
+    background-color: white;
+    padding: 10px 20px 11px;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #afafaf;
+    box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+}
+
+.pay-button {
+    padding: 0.7rem 2rem;
+    width: 100%;
+    margin: 1rem 0;
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    background-color: #556cd6;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+    transition: box-shadow 500ms;
+    cursor: pointer;
+}
+
+.pay-button:disabled {
+    background-color: #afafaf;
+    box-shadow: none;
+    cursor: default;
+}
+.pay-button:disabled:hover {
+    box-shadow: none;
+}
+
+.pay-button:hover {
+    box-shadow: 2px 5px 15px 2px rgba(0, 0, 0, 0.2);
+}
 /********************************************************
-    4. Header CSS
+ Header CSS
 *******************************************************/
 .fit_header_wrapper {
     padding: 30px 0;
@@ -649,7 +696,7 @@ p {
     margin-right: .5rem !important;
 }
 /********************************************************
-    23. Responsive  CSS
+    Responsive  CSS
 *******************************************************/
 @media (min-width: 1600px) {
     .fit_heading p {
