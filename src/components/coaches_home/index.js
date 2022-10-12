@@ -1,7 +1,9 @@
 import React, { useState, useRef, Fragment }  from "react"
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper';
-import { Grid, Container } from "@material-ui/core";
+//import { Grid, Container } from "@material-ui/core";
+//import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Container, Row, Col } from "react-awesome-styled-grid";
 import { makeStyles } from '@material-ui/core/styles';
 import {
     FitTrainerWrapper,
@@ -33,7 +35,6 @@ const slide_img = [
 SwiperCore.use([Navigation])
 
 const Couch = () => {
-     const classes = useStyles();
     const prevRef = useRef(null);
     const nextRef = useRef(null);
 
@@ -46,17 +47,17 @@ const Couch = () => {
     
     
     return (
-        <FitTrainerWrapper id="instructores"  className={classes.root}>
+        <FitTrainerWrapper id="instructores">
             <Container>
-                <Grid container justifyContent="center">
-                    <Grid item lg={12} className="offset-xl-0 offset-lg-2 offset-md-1">
+                <Row>
+                    <Col lg={12} className="offset-xl-0 offset-lg-2 offset-md-1">
                         <FitHeading className="fit_heading text-center">
                             <HeadingTitle className="heading_title">MEET THE TEAM</HeadingTitle>
                         </FitHeading>
-                    </Grid>
-                </Grid>
-                <Grid container justifyContent="center">
-                    <Grid  item xs={4} sm={9} md={7} lg={12}>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={4} sm={9} md={12} lg={12}>
                         <div className="fit_trainer_inner">
                             <Swiper
                                 modules={[Autoplay, Pagination, Navigation]}
@@ -88,7 +89,7 @@ const Couch = () => {
                                         spaceBetween: 20
                                     },
                                     1200: {
-                                        slidesPerView: 3,
+                                        slidesPerView: 4,
                                 
                                         spaceBetween: 30,
                                     }
@@ -122,8 +123,8 @@ const Couch = () => {
                             </div>
                             </Swiper>
                         </div>
-                    </Grid>
-                </Grid>
+                    </Col>
+                </Row>
             </Container>
             <Modal
                 active={active}
