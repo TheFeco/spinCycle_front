@@ -15,6 +15,7 @@ export const DAYS = [
   { key: 'jueves', value: 'jueves', text: 'JUEVES' },
   { key: 'viernes', value: 'viernes', text: 'VIERNES' },
   { key: 'sábado', value: 'sábado', text: 'SÁBADO' },
+  { key: 'domingo', value: 'domingo', text: 'DOMINGO' },
 ]
 
 export const AMPM = [

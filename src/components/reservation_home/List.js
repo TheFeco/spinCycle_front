@@ -11,7 +11,8 @@ const days = [
   'Miercoles',
   'Jueves',
   'Viernes',
-  'Sábado'
+  'Sábado',
+  'Domingo'
 ]
 
 const daysMoment = {
@@ -20,7 +21,8 @@ const daysMoment = {
   'Miercoles': 'wednesday',
   'Jueves': 'thursday',
   'Viernes': 'friday',
-  'Sábado': 'saturday'
+  'Sábado': 'saturday',
+  'Domingo': 'sunday'
 }
 
 class Week extends Component {

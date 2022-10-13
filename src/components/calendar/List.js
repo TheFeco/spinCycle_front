@@ -9,7 +9,8 @@ const days = [
   'Miercoles',
   'Jueves',
   'Viernes',
-  'Sábado'
+  'Sábado',
+  'Domingo'
 ]
 
 class Week extends Component {
@@ -65,7 +66,7 @@ class Week extends Component {
 
     return (
       <div className="schedule">
-        <Grid columns={6}>
+        <Grid columns={7}>
           {renderHeader}
           {renderDays}
         </Grid>
