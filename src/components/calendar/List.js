@@ -14,7 +14,7 @@ const days = [
 ]
 
 class Week extends Component {
-  state = { open: false, coachs: {}, calendarId: 0 }
+  state = { open: false, coachs: {}, calendarId: 0, daysArray: [] }
 
   close = () => this.setState({ open: false })
   open = (calendarId) => this.setState({ open: true, calendarId })
@@ -37,8 +37,10 @@ class Week extends Component {
 
   renderDays = () => {
     const { calendar } = this.props
+    this.state.daysArray = [];
     return days.map(day => {
       var dataSchedules = calendar.findAllSchedulesByWeek.filter(item => item.schedule.day === day.toLowerCase())
+      if(dataSchedules.length > 0){ this.state.daysArray.push(day) }
       dataSchedules = dataSchedules.sort((a, b) => a.schedule.order.localeCompare(b.schedule.order))
       const renderSchedules = this.renderSchedules(dataSchedules)
 
@@ -51,7 +53,8 @@ class Week extends Component {
   }
 
   renderHeader = () => {
-    return days.map(day => {
+    console.log(this.state.daysArray)
+    return this.state.daysArray.map(day => {
       return (
         <Grid.Column key={day} className="schedule__header">
           {day}
@@ -66,7 +69,7 @@ class Week extends Component {
 
     return (
       <div className="schedule">
-        <Grid columns={7}>
+        <Grid columns={this.state.daysArray.length}>
           {renderHeader}
           {renderDays}
         </Grid>

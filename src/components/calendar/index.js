@@ -30,7 +30,6 @@ class Calendar extends Component {
   currentDate = () => {
     const days = this.getDaysOfWeek(INIT_CURRENT_DATE, FINISH_CURRENT_DATE)
     this.setState({ days })
-    console.log(days);
   }
 
   lastWeek = () => {
