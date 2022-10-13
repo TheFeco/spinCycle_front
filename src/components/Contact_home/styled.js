@@ -15,10 +15,12 @@ export const MapResponsive = styled.div`
     }
       
     @media only screen and (max-width: 600px) {
+        padding-bottom: 50%;
         iframe{
             height: 100%;
         }
     }
+    
 `;
 
 export const ContactText = styled.div`
