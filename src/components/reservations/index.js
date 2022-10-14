@@ -133,7 +133,7 @@ class Reservations extends Component {
         </Grid>
 
         {days.length > 0 &&
-          <h4>DEL {moment(days[0].date).format('DD/MM/YYYY')} AL {moment(days[5].date).format('DD/MM/YYYY')}</h4>
+          <h4>DEL {moment(days[0].date).format('DD/MM/YYYY')} AL {moment(days[6].date).format('DD/MM/YYYY')}</h4>
         }
         {this.state.userId !== '' &&
           <Fragment>
@@ -142,7 +142,7 @@ class Reservations extends Component {
                 query={findAllSchedulesByWeek}
                 variables={{
                   initialDate: days[0].date,
-                  finishDate: days[5].date,
+                  finishDate: days[6].date,
                   userId: this.state.userId
                 }}
                	pollInterval={1000}

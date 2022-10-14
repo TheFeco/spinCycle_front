@@ -123,7 +123,7 @@ class Week extends Component {
         <div style={{paddingTop: 0, paddingBottom: 30}}>
           <h3>Reservaciones pendientes {pendings > 1000 ? 'Ilimitadas' : pendings}</h3>
         </div>
-        <Grid columns={6}>
+        <Grid columns={7}>
           {renderHeader}
         </Grid>
 

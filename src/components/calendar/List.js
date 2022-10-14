@@ -53,7 +53,7 @@ class Week extends Component {
   }
 
   renderHeader = () => {
-    console.log(this.state.daysArray)
+    //console.log(this.state.daysArray)
     return this.state.daysArray.map(day => {
       return (
         <Grid.Column key={day} className="schedule__header">
