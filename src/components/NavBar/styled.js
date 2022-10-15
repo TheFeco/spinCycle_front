@@ -53,8 +53,32 @@ export const NavbarLink = styled(AnchorLink)`
         display: none;
     }
 `;
+export const NavbarLinkTo = styled(Link)`
+    color: white;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    margin: 10px;
+    //padding: 25px 0 0 0;
+    @media (max-width: 800px) {
+        display: none;
+    }
+    @media (max-width: 700px) {
+        display: none;
+    }
+`;
 export const NavbarLinkExtended = styled(AnchorLink)`
     color: white;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    margin: 10px;
+`;
+
+export const NavbarLinkExtendedTo = styled.button`
+    color: white;
+    background-color: transparent;
+    border: none;
     font-size: x-large;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;

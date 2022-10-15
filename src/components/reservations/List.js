@@ -60,8 +60,8 @@ class Week extends Component {
       const reservedForMe = reservations.filter(reservation => reservation.user.id === userId)
       const date = schedule.dateOfCalendar // moment(`${moment(schedule.dateOfCalendar).format('YYYY-MM-DD')} ${schedule.schedule.hour}:00 ${schedule.schedule.ampm || 'AM'}`)
       const reservedForMeSaturday = reservations.filter(reservation => reservation.user.id === userId && moment(reservation.day).format('ddd') === 'Fri')
-	const reserdForMeSaturday = reservations.filter(reservation => console.log(reservation.user.id === userId && moment(reservation.day).format('ddd') === 'Fri'))
-//console.log({  reservedForMeSaturday, reserdForMeSaturday})
+	    const reserdForMeSaturday = reservations.filter(reservation => console.log(reservation.user.id === userId && moment(reservation.day).format('ddd') === 'Fri'))
+      //console.log({  reservedForMeSaturday, reserdForMeSaturday})
 
       if (schedule.isOpen) {
         return (

@@ -8,12 +8,13 @@ import {
     NavbarExtendedContainer,
     NavbarLinkContainer,
     NavbarLink,
+   NavbarLinkExtendedTo,
     NavbarLinkExtended,
     Logo,
     OpenLinkButton,
     LoginLinkButton
 } from '../NavBar/styled';
-
+import { Link } from 'react-router-dom';
 import LogoImg from '../../assets/imgs/logo-oscuro.png'
 
 const index = ({ history, islogged }) => {
@@ -46,11 +47,15 @@ const index = ({ history, islogged }) => {
           </NavbarInnerContainer>
           { extendNavbar &&(
                 <NavbarExtendedContainer>
-                    <NavbarLinkExtended className="item" href=' #inicio'>Abaut US</NavbarLinkExtended>
                     <NavbarLinkExtended className="item" href='#instructores'>Meet the team</NavbarLinkExtended>
                     <NavbarLinkExtended className="item" href='#palnes'>Paquetes</NavbarLinkExtended>
                     <NavbarLinkExtended className="item" href='#contacto'>Contacto</NavbarLinkExtended>
-                    <NavbarLinkExtended className="item" href='#Reservar'>Reservar</NavbarLinkExtended>
+                  {islogged && ( 
+                      <NavbarLinkExtendedTo className="item" onClick={() => history.push('/panel')}>Mi sesión</NavbarLinkExtendedTo>
+                  )}
+                  {!islogged && (
+                      <NavbarLinkExtendedTo className="item" onClick={() => history.push('/login')}>Iniciar sesión</NavbarLinkExtendedTo>
+                      )}
                 </NavbarExtendedContainer>
               )
           }
